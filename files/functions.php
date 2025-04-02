@@ -4,8 +4,8 @@ function readArrayFromFile($filename)
 {
     $file = file_get_contents($filename);
 
-    $arr = explode(", ", $file);
-    array_filter($arr, fn($e) => $e % 5 === 0);
+    $arr = array_map("intval", explode(", ", $file));
+    $arr = array_filter($arr, fn($e) => $e % 5 === 0);
 
     echo array_reduce($arr, function ($carry, $item) {
         return $carry * $item;
