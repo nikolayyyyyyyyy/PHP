@@ -33,8 +33,10 @@ class Programmer extends Person
 
     function describe()
     {
-        echo parent::show_person() . PHP_EOL;
-        echo "I know also PHP!" . PHP_EOL;
+        echo parent::show_person();
+        echo "<br>";
+        echo "I know also PHP!";
+        echo "<br>";
         print_r($this->langs);
     }
 }
