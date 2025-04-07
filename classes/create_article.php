@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $author = $_POST['author'];
     $description = $_POST['description'];
-    include "ex3.php";
+    include "classes_definition.php";
 
     $book = new Article($title, $author, $description);
     echo $book->show_article();
