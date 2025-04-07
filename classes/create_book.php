@@ -1,9 +1,9 @@
 <?php
 class Book
 {
-    public $title;
-    public $author;
-    public $price;
+    private $title;
+    private $author;
+    private $price;
 
     function __construct($title, $author, $price)
     {
@@ -14,7 +14,7 @@ class Book
 
     function show_books()
     {
-        echo "Book: " . $this->title . ", " . $this->author . ", " . $this->price;
+        echo "Book: " . $this->title . ", " . $this->author . ", " . $this->price . "lv.";
     }
 }
 
