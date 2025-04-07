@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author = $_POST['family'];
     $description = $_POST['mail'];
 
-    include "ex3.php";
+    include "classes_definition.php";
     $person = new Person($title, $author, $description);
 
     echo $person->show_person();
