@@ -1,6 +1,8 @@
 <?php
+include_once "icalculate.php";
+include_once "iparking.php";
 include_once "vehicle.php";
-class Parking
+class Parking implements Icalculate, Iparrking
 {
     private int $capacity;
     private $vehicles;
