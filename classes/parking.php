@@ -1,32 +1,16 @@
 <?php
 include_once "icalculate.php";
-include_once "iparking.php";
-include_once "vehicle.php";
-class Parking implements Icalculate, Iparrking
+abstract class Vehicle implements Icalculate
 {
-    private int $capacity;
-    private $vehicles;
+    private int $year;
 
-    public function __construct($capacity)
+    protected function __construct($year)
     {
-        $this->capacity = $capacity;
-        $this->vehicles = [];
+        $this->year = $year;
     }
 
-    public function add_vehicle(Vehicle $vehicle)
+    protected function get_year(): int
     {
-        array_push($this->vehicles, $vehicle);
-    }
-
-    public function remove_last_vehicle()
-    {
-        array_pop($this->vehicles);
-    }
-
-    public function calculate_tax(): int
-    {
-        return array_reduce($this->vehicles, function ($acc, $e) {
-            return $acc += $e->calculate_tax();
-        }, 1);
+        return $this->year;
     }
 }
